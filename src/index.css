@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: #0D0B14;
+  --color-surface: #13101F;
+  --color-card: #18142A;
+  --color-card2: #1E1A30;
+  --color-border: #2A2440;
+  --color-border2: #332D50;
+  --color-purple-primary: #7C5CFC;
+  --color-purple-secondary: #9B7FFF;
+  --color-purple-accent: #C4ADFF;
+  --color-pink-accent: #F857A6;
+  --color-green-accent: #00D68F;
+  --color-red-accent: #FF4D6A;
+  --color-amber-accent: #FFB547;
+  --color-text-primary: #E8E3FF;
+  --color-text-muted: #7B72A8;
+  --color-text-faint: #3D3660;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-primary font-sans min-h-screen antialiased;
+    background-image: 
+      radial-gradient(circle at -150px -100px, rgba(124, 92, 252, 0.12) 0%, transparent 500px),
+      radial-gradient(circle at calc(100% + 100px) calc(100% + 100px), rgba(248, 87, 166, 0.07) 0%, transparent 400px);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+.animate-blink {
+  animation: blink 1.4s ease-in-out infinite;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-border2 rounded-full;
+}
+
